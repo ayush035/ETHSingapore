@@ -1,8 +1,22 @@
 import Link from "next/link";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import  '@/styles/Home.module.css'
+import { IDKitWidget, VerificationLevel, ISuccessResult } from '@worldcoin/idkit'
 
 export default function Navbar() {
+
+    const handleProof = function(result) {
+        return new Promise(function(resolve) {
+            setTimeout(function() {
+                resolve();
+            }, 3000);
+            // NOTE: Example of how to decline the verification request and show an error message to the user
+        });
+    };
+    
+    const onSuccess = function(result) {
+        console.log(result);
+    };
 
     return (
         
@@ -40,8 +54,23 @@ export default function Navbar() {
             <div className='hover:text-black delay-50  text-md font-semibold font-mono'>
         
             <Link href="/explore">Explore</Link></div>
+
+            <div className='hover:text-black delay-50 text-lg font-semibold font-mono '>
+        <IDKitWidget
+					action="id_verification"
+					signal="my_signal"
+					onSuccess={onSuccess}
+					handleVerify={handleProof}
+					app_id="app_staging_073c6b3b4db6f8d30a1b61634f53c0b5"
+					// walletConnectProjectId="get_this_from_walletconnect_portal"
+				>
+					{({ open }) => <button onClick={open}>Verification</button>}
+				</IDKitWidget>
+</div>         
               {/* <div className=' mx-2 my-2 '> */}            
         <ConnectButton/>
+        
+
             </ul>
         </nav>
         

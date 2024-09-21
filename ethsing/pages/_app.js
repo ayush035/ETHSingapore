@@ -11,20 +11,20 @@ import {
 } from '@rainbow-me/rainbowkit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiProvider, http } from 'wagmi'
-import { mainnet, zetachain, zksync, arbitrum, zetachainAthensTestnet, sepolia, celo } from 'wagmi/chains'
+import { zetachain, zksync, arbitrum, zetachainAthensTestnet, sepolia, celo } from 'wagmi/chains'
 import { getDefaultConfig, } from '@rainbow-me/rainbowkit'
 
-const AirDAO = {
-  id: 16718,
-  name: 'AirDao Mainnet',
+const Morpholesky = {
+  id: 2810,
+  name: 'Morph Holesky',
 
   iconBackground: '#fff',
-  nativeCurrency: { name: 'AMB', symbol: 'AMB', decimals: 18 },
+  nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
-    default: { http: ['https://network.ambrosus.io'] },
+    default: { http: ['https://rpc-holesky.morphl2.io	'] },
   },
   blockExplorers: {
-    default: { name: 'AirDAO Explorer', url: 'https://airdao.io/explorer/' },
+    default: { name: 'Morph holesky explorer', url: 'https://explorer-holesky.morphl2.io/' },
   },
   // contracts: {
   //   multicall3: {
@@ -38,14 +38,14 @@ const AirDAO = {
 const config = getDefaultConfig({
   appName: 'RainbowKit demo',
   projectId: '9c17dc69becbe137fe50e55e31598852',
-  chains: [ AirDAO],
+  chains: [ Morpholesky],
   transports: {
     [arbitrum.id]: http(),
     [zetachain.id]: http(),
     [zetachainAthensTestnet.id]: http(),
     [zksync.id]: http(),
     [celo.id]: http(),
-    [AirDAO.id]: http(),
+    [Morpholesky.id]: http(),
 
 
 
