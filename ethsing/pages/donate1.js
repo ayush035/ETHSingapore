@@ -16,7 +16,7 @@ export default function Fund() {
                     </Image>
                     <div>
 <div className= "mx-10 font-mono text-black text-xl font-bold">
-    Owned By : 0xC72fa67241b2Ab95776DB23Cb27A845d4290d75B / ayush
+    Owned By :  0xayush.eth
 </div>
 <div className= "mx-10 my-4 font-mono text-black text-xl">
     Description : Its an authentic NFT of the Official Logo of this project.

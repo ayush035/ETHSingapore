@@ -6,7 +6,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useSignMessage } from 'wagmi';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-
+import Ens from "@/components/Ens"
 export default function Home() {
   const [contract, setContract] = useState(null);
   const [username, setUsername] = useState('');
@@ -185,6 +185,7 @@ export default function Home() {
 
     <div>
       <Navbar/>
+      <Ens/>
       <h1>Username Registry</h1>
       <ConnectButton />
       {isConnected && (
