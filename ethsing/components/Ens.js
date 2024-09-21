@@ -1,13 +1,17 @@
-import { useEffect, useState } from 'react';
 import { useAccount, useEnsName } from 'wagmi';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useEffect, useState } from 'react';
 
-export default function AutoFetchENS() {
-  const { address, isConnected } = useAccount();  // Get the wallet address and connection status
-  const { data: ensName, isLoading } = useEnsName({ address });  // Automatically fetch ENS name based on connected wallet
+export default function FetchENS() {
+  const { address, isConnected } = useAccount();
+  const { data: ensName, isLoading, isError, error } = useEnsName({
+    address, // Pass wallet address to fetch ENS
+    enabled: !!address, // Only run if address exists
+  });
+
   const [displayName, setDisplayName] = useState('');
 
-  // Update the display name when ENS name is fetched or fallback to the wallet address
+  // Update the display name when ENS is fetched or fallback to address
   useEffect(() => {
     if (ensName) {
       setDisplayName(ensName);
@@ -18,15 +22,18 @@ export default function AutoFetchENS() {
 
   return (
     <div>
-      {/* RainbowKit Wallet Connect Button */}
       <ConnectButton />
-
       {isConnected && (
-        <div className=' text-black'>
+        <div>
           {isLoading ? (
             <p>Loading ENS...</p>
+          ) : isError ? (
+            <>
+              <p>Could not fetch ENS name</p>
+              <p>Error: {error?.message}</p> {/* Show error message for debugging */}
+            </>
           ) : (
-            <p>Connected as: {displayName}</p> // Display ENS or wallet address
+            <p>Connected as: {displayName}</p>
           )}
         </div>
       )}

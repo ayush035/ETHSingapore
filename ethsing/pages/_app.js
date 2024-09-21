@@ -11,7 +11,7 @@ import {
 } from '@rainbow-me/rainbowkit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiProvider, http } from 'wagmi'
-import { zetachain, zksync, arbitrum, zetachainAthensTestnet, sepolia, celo } from 'wagmi/chains'
+import { zetachain, zksync, arbitrum, zetachainAthensTestnet, sepolia, celo, mainnet } from 'wagmi/chains'
 import { getDefaultConfig, } from '@rainbow-me/rainbowkit'
 
 const Morpholesky = {
@@ -38,9 +38,11 @@ const Morpholesky = {
 const config = getDefaultConfig({
   appName: 'RainbowKit demo',
   projectId: '9c17dc69becbe137fe50e55e31598852',
-  chains: [ Morpholesky],
+  chains: [ Morpholesky, mainnet],
   transports: {
     [arbitrum.id]: http(),
+    [mainnet.id]: http(),
+
     [zetachain.id]: http(),
     [zetachainAthensTestnet.id]: http(),
     [zksync.id]: http(),
