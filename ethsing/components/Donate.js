@@ -28,6 +28,87 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
   "function createPool(address token, address admin, (uint32 transferabilityForUnitsOwner, bool distributionFromAnyAddress) memory poolConfig) external returns (bool, address)"
   ];
 
+  if (signer) {
+    const contractAddress = "0xC3a3e3419ED038B261dE1BF8057558F85b6e33D8" ; 
+    const contractABI = [
+      {
+        "inputs": [
+          {
+            "internalType": "address payable",
+            "name": "_donationAddress",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "donor",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "name": "DonationReceived",
+        "type": "event"
+      },
+      {
+        "inputs": [],
+        "name": "donate",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "donationAddress",
+        "outputs": [
+          {
+            "internalType": "address payable",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getContractBalance",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address payable",
+            "name": "newAddress",
+            "type": "address"
+          }
+        ],
+        "name": "setDonationAddress",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ]
+
 //   const connectWallet = async () => {
 //     if (typeof window.ethereum !== 'undefined') {
 //       try {

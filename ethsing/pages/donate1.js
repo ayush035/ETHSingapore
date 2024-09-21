@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import logo from '@/public/logo.jpg'
 import Image from 'next/image'
 
-import Donate from '@/components/Donate'
+// import Donate from '@/components/Donate'
 export default function Fund() {
     return(
 <>

@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar'
 // const inter = Inter({ subsets: ['latin'] })
 import d from '../public/d.jpg'
 import e from '../public/e.jpg'
+import backgrounds from '../public/backgrounds.jpg'
+
 import shield from '../public/shield.png'
 import Footer from '@/components/Footer'
 
@@ -13,11 +15,11 @@ export default function Home() {
   return (
    <>
 <Navbar/>
-<div className ='flex justify-center items-center my-20 mx-20'>
+<div className ='flex  my-4 mx-12'>
 <Image 
-src={e}
+src={backgrounds}
 alt=''
-width="1100"
+width="1000"
 height="400"/>
 
 </div>
