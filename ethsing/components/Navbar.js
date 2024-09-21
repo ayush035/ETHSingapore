@@ -22,9 +22,9 @@ export default function Navbar() {
              <div>
         <input className='px-4 rounded-lg text-smfont-semibold font-mono h-8 outline outline-offset-2 outline-slate-300 outline-width:4px hover:outline-blue-500 outline-width: 4px' type="search" placeholder="Search..." />
         </div>
-        <div className='hover:text-black delay-50  text-md font-semibold font-mono'>
+        {/* <div className='hover:text-black delay-50  text-md font-semibold font-mono'> */}
         
-            <Link href="/search">Naming service</Link></div>
+            {/* <Link href="/search">Naming service</Link></div> */}
         
         
             {/* <Link href="/search">Search</Link> */}

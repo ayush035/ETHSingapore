@@ -39,7 +39,7 @@ export default function profile()
                     <div className=' flex justify-center'>
                     <div className=' text-blue-500 font-mono my-2'>
                         <a href='https://bafybeietu4bacniu3vfiparmvxqmd4oclzdiieqva2gaz2exyif46ne4tu.ipfs.dweb.link'>
-                        View on IPFS
+                        View 
                         </a>
                     </div>
                     </div>

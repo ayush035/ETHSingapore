@@ -14,7 +14,7 @@ return (
 
     <div className='transition ease-in-out delay-50 hover:-translate-y-1 cursor-pointer text-slate-400 font-mono font-bold text-lg'>
 
-    <a href='https://github.com/ayush035/final'>
+    <a href='https://github.com/ayush035/ETHSingapore'>
     {/* <img src='/github-1.png'>
         </img> */}
         Github
@@ -28,7 +28,7 @@ return (
 
 
     <div className='transition ease-in-out delay-50 hover:-translate-y-1 cursor-pointer text-slate-400 font-mono font-bold text-lg'>
-    <a href='https://twitter.com/Socxhq'>
+    <a href='https://twitter.com'>
 
     {/* <img src='/twitter-1.png'>
         </img> */} Twitter

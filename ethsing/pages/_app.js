@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }) {
         <RainbowKitProvider 
         initialChain={4}
         theme={lightTheme({
-          accentColor: '#FF69B4',
+          accentColor: '#42A5F5',
           accentColorForeground: 'white',
           borderRadius: 'medium',
         })}
